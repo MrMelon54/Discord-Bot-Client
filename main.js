@@ -37,7 +37,11 @@ function mainApp(token) {
     function createWindow() {
         mainWindow = new BrowserWindow({
             width: 1030, height: 800,
-            minWidth: 760, minHeight: 200
+            minWidth: 760, minHeight: 200,
+            webPreferences: {
+                nodeIntegration: true,
+                contextIsolation: false
+            }
         });
 
         mainWindow.loadFile('index.html');
